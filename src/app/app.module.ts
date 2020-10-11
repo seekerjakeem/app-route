@@ -7,6 +7,9 @@ import { AppComponent }          from './app.component';
 import { CrisisListComponent }   from './crisis-list/crisis-list.component';
 import { HeroListComponent }     from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeroesModule } from './heroes/heroes.module';
+import { HeroesComponent } from './heroes/heroes/heroes.component';
+import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
 
 const appRoutes: Routes = [
   { path: 'crisis-center', component: CrisisListComponent },
@@ -23,13 +26,16 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    HeroesModule
   ],
   declarations: [
     AppComponent,
     HeroListComponent,
     CrisisListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeroesComponent,
+    HeroDetailComponent
   ],
   bootstrap: [ AppComponent ]
 })
