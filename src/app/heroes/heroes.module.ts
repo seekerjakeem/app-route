@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { HeroesRoutingModule } from './heroes-routing.module';
-import { RouterModule, Routes } from '@angular/router';
-import { HeroListComponent } from '../hero-list/hero-list.component';
+import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
+import { HeroesRoutingModule } from './heroes-routing.module';
 
 @NgModule({
-  declarations: [],
   imports: [
-   RouterModule.forChild(heroesRoutes)
+    CommonModule,
+    FormsModule,
+    HeroesRoutingModule
   ],
-  exports: [
-    RouterModule
+  declarations: [
+    HeroListComponent,
+    HeroDetailComponent
   ]
 })
-const heroesRoutes: Routes = [
-  { path: 'heroes',  component: HeroListComponent },
-  { path: 'hero/:id', component: HeroDetailComponent }
-];
-export class HeroesModule { }
+export class HeroesModule {}
